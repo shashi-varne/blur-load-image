@@ -1,0 +1,26 @@
+.image-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* image and background div should have same 'cover' and 'center' properties */
+.blur-load {
+  background-position: center;
+  background-size: cover;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* fade the image in once it loads */
+.blur-load > img {
+  opacity: 0;
+  transition: opacity 200ms ease-in;
+}
+
+.blur-load.loaded > img {
+  opacity: 1;
+}
